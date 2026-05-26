@@ -4,7 +4,7 @@ import random
 import torch
 from torch.utils.data import Dataset
 
-from labeler import Labeler
+from src.labeler import Labeler
 
 
 class CredNERDataset(Dataset):

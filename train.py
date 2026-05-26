@@ -5,10 +5,10 @@ Base model: bert-base-cased (encoder-only, bidirectional, case-sensitive)
 
 from torch.utils.data import DataLoader
 
-from labeler import Labeler
-from dataset import CredNERDataset, collate_fn
-from model import build_model
-from trainer import Trainer
+from src.labeler import Labeler
+from src.dataset import CredNERDataset, collate_fn
+from src.model import build_model
+from src.trainer import Trainer
 
 MODEL_NAME = "bert-base-cased"
 BATCH_SIZE = 8
@@ -24,7 +24,7 @@ if __name__ == "__main__":
     labeler = Labeler(MODEL_NAME)
 
     train_dataset, val_dataset = CredNERDataset.from_jsonl(
-        "data/train/data.jsonl", labeler, VAL_RATIO
+        "data/train/data-enriched.jsonl", labeler, VAL_RATIO
     )
     print(f"Train samples: {len(train_dataset)}  |  Val samples: {len(val_dataset)}")
 

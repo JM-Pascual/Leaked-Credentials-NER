@@ -10,7 +10,7 @@ Usage:
 import argparse
 import sys
 
-from inferencer import Inferencer
+from src.inferencer import Inferencer
 
 _RESET = "\033[0m"
 _RED   = "\033[91m"

@@ -1,6 +1,6 @@
 from transformers import BertForTokenClassification
 
-from labeler import Labeler
+from src.labeler import Labeler
 
 
 def build_model(model_name: str, labeler: Labeler) -> BertForTokenClassification:

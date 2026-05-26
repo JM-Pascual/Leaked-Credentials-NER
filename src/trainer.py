@@ -5,7 +5,7 @@ from transformers import BertForTokenClassification, get_linear_schedule_with_wa
 from torch.optim import AdamW
 from seqeval.metrics import classification_report
 
-from labeler import Labeler
+from src.labeler import Labeler
 
 
 class Trainer:
