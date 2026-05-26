@@ -1,0 +1,23 @@
+{
+  "app": {
+    "name": "data-pipeline",
+    "env": "production",
+    "port": 3000
+  },
+  "database": {
+    "host": "prod-db.example.com",
+    "port": 5432,
+    "name": "pipeline_db",
+    "user": "pipeline_user",
+    "password": "hN7$kP3mQrZ9xL2w"
+  },
+  "integrations": {
+    "slack": {
+      "webhook_url": "https://hooks.slack.com/services/T00000000/B00000000/XXXXXXXXXXXXXXXXXXXXXXXX",
+      "bot_token": "xoxb-17653265-6193728954-nqKKS1mKtg5JG3eUFO9HXVW8"
+    },
+    "datadog": {
+      "api_key": "3a8f52d14c7e9b6041a23f87d5c94be2"
+    }
+  }
+}
