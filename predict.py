@@ -17,20 +17,20 @@ _RED   = "\033[91m"
 _BOLD  = "\033[1m"
 
 
-def render(predictions: list[tuple[str, str]]) -> None:
-    for token, label in predictions:
+def render(predictions: list[tuple[str, str, float]]) -> None:
+    for token, label, conf in predictions:
         if label in ("B-CRED", "I-CRED"):
             print(f"{_RED}{_BOLD}{token}{_RESET}", end=" ")
         else:
             print(token, end=" ")
     print()
 
-    spans = [token for token, label in predictions if label in ("B-CRED", "I-CRED")]
+    spans = [(token, conf) for token, label, conf in predictions if label in ("B-CRED", "I-CRED")]
     print()
     if spans:
         print(f"Detected {len(spans)} credential token(s):")
-        for token in spans:
-            print(f"  {_RED}{token}{_RESET}")
+        for token, conf in spans:
+            print(f"  {_RED}{token}{_RESET}  ({conf:.0%} confidence)")
     else:
         print("No credentials detected.")
 
